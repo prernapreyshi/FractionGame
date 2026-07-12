@@ -1,6 +1,5 @@
-# Pie Fractions
-
-A fun browser game that helps children learn fractions by filling slices of a pie. This project was built for the ConveGenius.AI Product Intern assignment.
+# Fraction Game
+Interactive fraction learning game with a visual pie model, built using HTML, CSS, and JavaScript.
 
 ## Features
 
