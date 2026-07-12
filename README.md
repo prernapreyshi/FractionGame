@@ -4,7 +4,7 @@ Interactive fraction learning game with a visual pie model, built using HTML, CS
 
 ## Live Demo
 
-- **Live Demo:** https://your-live-demo.vercel.app
+- **Live Demo:** https://fraction-game-seven.vercel.app/
 - **GitHub Repository:** https://github.com/prernapreyshi/FractionGame
 
 ## Features
