@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fraction Game</title>
+<meta name="description" content="An interactive circular-model fraction game built with HTML, CSS, JavaScript, and Three.js.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/css/styles.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<div class="stage" id="stage">
+
+  
+  <header>
+    <div class="title-block">
+      <div class="eyebrow">Fraction Game</div>
+      <h1><span id="themeEmoji">🥧</span>Fraction Game</h1>
+    </div>
+    <div class="hud">
+      <div class="chip hide-on-start" id="levelChip">Level <b id="levelNum">1</b>/<span id="levelTotal">20</span></div>
+      <div class="chip">Score <b id="scoreNum">0</b></div>
+      <button class="icon-btn hide-on-start" id="levelsBtn" title="Level select" aria-label="Level select">☰</button>
+      <button class="icon-btn" id="homeBtn" title="Home" aria-label="Home">🏠</button>
+      <button class="icon-btn" id="muteBtn" title="Toggle sound" aria-label="Toggle sound">🔊</button>
+      <button class="icon-btn" id="restartBtn" title="Restart all progress" aria-label="Restart all progress">↺</button>
+    </div>
+  </header>
+
+  <section class="screen" id="screen-start">
+   
+
+    <div class="card start-stats" id="startStats" hidden>
+      <h3>Your Progress</h3>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-label">Best Score</span><span class="stat-value" id="savedScore">0</span></div>
+        <div class="stat"><span class="stat-label">Fastest Solve</span><span class="stat-value" id="savedFastest">—</span></div>
+        <div class="stat"><span class="stat-label">Levels Solved</span><span class="stat-value" id="savedSolved">0/20</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Choose a Theme</h3>
+      <div class="theme-row" id="themeRow"></div>
+    </div>
+
+    <div class="cta-row">
+      <button class="cta-btn" id="playBtn">▶ Play</button>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-levels">
+    <p class="tagline">Pick any level</p>
+    <div id="tiersContainer"></div>
+  </section>
+
+ 
+  <section class="screen" id="screen-game">
+    <div class="layout">
+
+      <div class="pie-panel">
+        <div class="game-topline">
+          <div class="tier-badge" id="tierBadge">Beginner</div>
+          <div class="timer-chip" id="timerChip">⏱ 0:00</div>
+        </div>
+
+        <div class="target-line">Make this fraction: <span class="fraction" id="targetFraction">3/4</span></div>
+
+        <div class="pie-wrap" id="pieWrap">
+          <svg class="pie" id="pieSvg" viewBox="0 0 200 200" role="img" aria-label="Circular pie fraction model"></svg>
+        </div>
+
+        <div class="current-readout">
+          <span class="num" id="curNum">0</span>
+          <span class="bar"></span>
+          <span id="curDen">4</span>
+        </div>
+
+        <div class="status-msg neutral" id="statusMsg" aria-live="polite">Add pieces to build the target fraction</div>
+        <div class="simplify-note" id="simplifyNote"></div>
+
+        <div class="controls">
+          <button class="piece-btn btn-add" id="addBtn">➕ Add Piece</button>
+          <button class="piece-btn btn-remove" id="removeBtn">➖ Remove Piece</button>
+        </div>
+        <div class="controls secondary-controls">
+          <button class="hint-btn" id="hintBtn">💡 Hint (<span id="hintsLeft">3</span>)</button>
+          <button class="next-btn" id="nextBtn">Next Level ▶</button>
+        </div>
+      </div>
+
+      <div class="side-panel">
+        <div class="card">
+          <h3>Progress</h3>
+          <div class="level-dots" id="levelDots"></div>
+        </div>
+        <div class="card">
+          <h3>Badges</h3>
+          <div class="badge-grid" id="badgeGrid"></div>
+        </div>
+        <div class="card">
+          <h3>How to play</h3>
+          <p class="hint-text">
+          Every pie is divided into equal slices. The bottom number (denominator) tells you the total number of slices. Use Add Piece or Remove Piece to shade slices until the shaded slices match the top number (numerator) of the target fraction.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="screen" id="screen-end">
+    <div class="end-card">
+      <div class="end-trophy">🏆</div>
+      <h2>Congratulations!</h2>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-label">Final Score</span><span class="stat-value" id="endScore">0</span></div>
+        <div class="stat"><span class="stat-label">Accuracy</span><span class="stat-value" id="endAccuracy">0%</span></div>
+        <div class="stat"><span class="stat-label">Fastest Solve</span><span class="stat-value" id="endFastest">—</span></div>
+        <div class="stat"><span class="stat-label">Badges</span><span class="stat-value" id="endBadges">0/5</span></div>
+      </div>
+      <div class="cta-row">
+        <button class="cta-btn" id="playAgainBtn">Play Again</button>
+        <button class="secondary-btn" id="backToMenuBtn">Back to Menu</button>
+      </div>
+    </div>
+  </section>
+
+ 
+
+ 
+  <div class="toast-stack" id="toastStack"></div>
+</div>
+
+<script type="module" src="src/js/main.js"></script>
+</body>
+</html>
