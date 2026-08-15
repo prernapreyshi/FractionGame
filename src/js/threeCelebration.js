@@ -8,7 +8,6 @@ export class ThreeCelebration {
     this.container = containerEl;
     this._active = false;
   }
-
  
   get isAvailable() {
     return typeof window.THREE !== 'undefined';
