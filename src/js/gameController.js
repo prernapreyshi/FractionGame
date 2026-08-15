@@ -61,8 +61,6 @@ export class GameController {
     return MAX_HINTS_PER_LEVEL - this.hintsUsed;
   }
 
-  
-
   _restoreSavedProgress() {
     const saved = loadProgress();
     if (!saved) return;
@@ -75,7 +73,6 @@ export class GameController {
     this.bestCleanStreak = saved.bestCleanStreak ?? 0;
     this.fastestSolveSeconds = saved.fastestSolveSeconds ?? null;
 
-   
     const firstUnsolved = this.bestStars.findIndex((s) => s === null);
     this.levelIndex = firstUnsolved === -1 ? LEVELS.length - 1 : firstUnsolved;
   }
