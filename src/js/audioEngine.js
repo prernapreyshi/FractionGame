@@ -3,8 +3,6 @@ export class AudioEngine {
     this.muted = false;
     this._ctx = null;
   }
-
-
   _ensureContext() {
     if (!this._ctx) {
       const Ctx = window.AudioContext || window.webkitAudioContext;
@@ -54,13 +52,11 @@ export class AudioEngine {
     this._tone(320, 0.12, 'triangle', 0.11);
   }
 
-
   playCorrect() {
     this._tone(523.25, 0.16, 'sine', 0.16, 0);
     this._tone(659.25, 0.16, 'sine', 0.16, 0.09);
     this._tone(783.99, 0.24, 'sine', 0.18, 0.18);
   }
-
 
   playWrong() {
     this._tone(220, 0.18, 'sawtooth', 0.10, 0);
