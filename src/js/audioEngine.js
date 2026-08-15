@@ -12,7 +12,6 @@ export class AudioEngine {
   }
 
   /**
-   
    * @param {number} freq 
    * @param {number} duration 
    * @param {OscillatorType} type -
@@ -46,7 +45,6 @@ export class AudioEngine {
   playAdd() {
     this._tone(520, 0.12, 'triangle', 0.13);
   }
-
   
   playRemove() {
     this._tone(320, 0.12, 'triangle', 0.11);
@@ -62,7 +60,6 @@ export class AudioEngine {
     this._tone(220, 0.18, 'sawtooth', 0.10, 0);
     this._tone(180, 0.22, 'sawtooth', 0.10, 0.05);
   }
-
 
   playLevelComplete() {
     this._tone(392.0, 0.12, 'sine', 0.15, 0);
