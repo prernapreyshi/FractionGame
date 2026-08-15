@@ -68,11 +68,9 @@ export class AudioEngine {
     this._tone(783.99, 0.28, 'sine', 0.18, 0.30);
   }
 
-
   playHint() {
     this._tone(440, 0.14, 'sine', 0.10);
   }
-
   
   playAchievement() {
     this._tone(880, 0.14, 'triangle', 0.15, 0);
