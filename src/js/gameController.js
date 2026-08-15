@@ -5,7 +5,6 @@ import { ACHIEVEMENTS, getNewlyUnlocked } from './achievements.js';
 import { getThemeById } from './themes.js';
 import { loadProgress, saveProgress } from './storage.js';
 
-
 const SPEED_BONUSES = [
   { underSeconds: 15, bonus: 20 },
   { underSeconds: 30, bonus: 10 }
