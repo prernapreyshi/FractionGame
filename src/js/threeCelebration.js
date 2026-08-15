@@ -28,6 +28,7 @@ export class ThreeCelebration {
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.domElement.style.position = 'absolute';
+    
     renderer.domElement.style.top = '0';
     renderer.domElement.style.left = '0';
     renderer.domElement.style.pointerEvents = 'none';
