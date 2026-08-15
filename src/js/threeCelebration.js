@@ -12,7 +12,6 @@ export class ThreeCelebration {
   get isAvailable() {
     return typeof window.THREE !== 'undefined';
   }
-
   
   burst() {
     if (!this.isAvailable || this._active) return;
@@ -21,7 +20,6 @@ export class ThreeCelebration {
     const THREE = window.THREE;
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
-
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 100);
     camera.position.set(0, 0, 6.5);
@@ -51,7 +49,6 @@ export class ThreeCelebration {
       });
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(0, 0, 0);
-
       
       const angle = Math.random() * Math.PI * 2;
       const spread = 1.5 + Math.random() * 2.5;
