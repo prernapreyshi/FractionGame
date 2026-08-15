@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const dom = {
     stage: document.getElementById('stage'),
     themeEmoji: document.getElementById('themeEmoji'),
-
    
     levelNum: document.getElementById('levelNum'),
     levelTotal: document.getElementById('levelTotal'),
@@ -65,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (name === 'start') renderStartScreen();
     if (name === 'levels') renderLevelSelect();
   }
-
   
   function setStatus(message, kind) {
     dom.statusMsg.textContent = message;
