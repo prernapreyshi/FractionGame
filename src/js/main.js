@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => toast.classList.add('toast-out'), 2600);
     setTimeout(() => toast.remove(), 3000);
   }
-
   
   function applyTheme(theme) {
     const root = document.documentElement.style;
@@ -136,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
       dom.themeRow.appendChild(btn);
     });
   }
-
   
   function renderLevelSelect() {
     dom.tiersContainer.innerHTML = '';
