@@ -33,10 +33,8 @@ export const TIERS = [
   { id: 'master', label: 'Master', color: '#7A4FC9' }
 ];
 
-
 export const BASE_POINTS = 10;
 export const BONUS_PER_STAR = 5; 
-
 
 export const PIE_GEOMETRY = {
   viewBoxSize: 200,
